@@ -8,6 +8,9 @@
       <v-app-bar-nav-icon @click.stop="toggleSideMenu"></v-app-bar-nav-icon>
       <v-tool-bar-title>マイアドレス帳</v-tool-bar-title>
       <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn text @click="logout">ログアウト</v-btn>
+      </v-toolbar-items>
     </v-app-bar>
     <SideNav/>
 
@@ -33,12 +36,14 @@ export default {
     SideNav
   },
   methods: {
-    ...mapActions(['toggleSideMenu', 'setLoginUser'])
+    ...mapActions(['toggleSideMenu', 'setLoginUser', 'logout', 'deleteLoginUser'])
   },
   created () {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.setLoginUser(user)
+      } else {
+        this.deleteLoginUser()
       }
     })
   },
