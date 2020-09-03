@@ -9,9 +9,12 @@
       <v-tool-bar-title>マイアドレス帳</v-tool-bar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
+    <SideNav/>
 
     <v-content>
-      <SideNav/>
+      <v-container fluid fill-height align-start>
+        <router-view/>
+      </v-container>
     </v-content>
 
     <v-main>
