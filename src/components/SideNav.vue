@@ -1,8 +1,7 @@
 <template>
   <v-container fluid fill-height>
-    <v-btn color="pink" dark @click.stop="drawer = !drawer">Toggle</v-btn>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="$store.state.drawer" absolute temporary>
       <v-list>
         <v-list-item>
           <v-list-item-avatar>
@@ -32,7 +31,6 @@
 export default {
   data () {
     return {
-      drawer: false,
       items: [
         { title: '連絡先一覧', icon: 'mdi-menu' }
       ]
