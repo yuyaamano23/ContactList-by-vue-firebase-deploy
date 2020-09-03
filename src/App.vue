@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 import { mapActions } from 'vuex'
 import SideNav from './components/SideNav'
 
@@ -32,7 +33,14 @@ export default {
     SideNav
   },
   methods: {
-    ...mapActions(['toggleSideMenu'])
+    ...mapActions(['toggleSideMenu', 'setLoginUser'])
+  },
+  created () {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setLoginUser(user)
+      }
+    })
   },
   data: () => ({
     //
