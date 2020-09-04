@@ -15,7 +15,7 @@
                <v-text-field v-model="address.address" label="住所"></v-text-field>
                <div class="text-center">
                  <v-btn @click="$router.push({ name: 'addresses' })">キャンセル</v-btn>
-                 <v-btn color="info" class="ml-2" @click="submit">保存</v-btn>
+                 <v-btn color="pink" class="ml-2" @click="submit">保存</v-btn>
                </div>
             </v-form>
           </v-card-text>

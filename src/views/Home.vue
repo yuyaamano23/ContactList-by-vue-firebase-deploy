@@ -7,7 +7,7 @@
       </v-flex>
 
       <v-flex xs12 mt-5>
-        <v-btn color='info' @click="login">Googleアカウントでログイン</v-btn>
+        <v-btn color='pink' @click="login">Googleアカウントでログイン</v-btn>
       </v-flex>
     </v-layout>
   </v-container>
